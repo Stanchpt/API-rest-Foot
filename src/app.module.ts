@@ -3,10 +3,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TeamsModule } from './teams/teams.module';
 import { PlayersModule } from './players/players.module';
 import { CompetitionModule } from './competition/competition.module';
+import { MatchsModule } from './matchs/matchs.module';
 import { Player } from './players/entities/player.entity';
 import { Team } from './teams/entities/team.entity';
 import { Competition } from './competition/entities/competition.entity';
-import { MatchsModule } from './matchs/matchs.module';
+import { Match } from './matchs/entities/Match.entity';
+
 
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { MatchsModule } from './matchs/matchs.module';
       username: 'root',
       password: '',
       database: 'foot-2022',
-      entities: [Player,Team,Competition],
+      entities: [Player,Team,Competition,Match],
       synchronize: true,
     }),
     TeamsModule,
