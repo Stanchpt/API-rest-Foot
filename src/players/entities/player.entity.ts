@@ -15,8 +15,5 @@ export class Player {
   age: number;
 
   @Column()
-  nationality :string;
-
-  @Column()
   equipe: string;
 }

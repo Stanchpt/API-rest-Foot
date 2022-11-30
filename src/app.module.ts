@@ -7,7 +7,7 @@ import { MatchsModule } from './matchs/matchs.module';
 import { Player } from './players/entities/player.entity';
 import { Team } from './teams/entities/team.entity';
 import { Competition } from './competition/entities/competition.entity';
-import { Match } from './matchs/entities/Match.entity';
+import { Matchs } from './matchs/entities/matchs.entity';
 
 
 @Module({
@@ -19,7 +19,7 @@ import { Match } from './matchs/entities/Match.entity';
       username: 'root',
       password: '',
       database: 'foot-2022',
-      entities: [Player,Team,Competition,Match],
+      entities: [Player,Team,Competition,Matchs],
       synchronize: true,
     }),
     TeamsModule,

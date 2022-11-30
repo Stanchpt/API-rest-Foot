@@ -10,8 +10,5 @@ export class CreatePlayerDto {
     age: number;
   
     @IsString()
-    nationality: string;
-
-    @IsString()
     equipe: string;
 }

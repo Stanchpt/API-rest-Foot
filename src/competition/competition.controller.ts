@@ -1,34 +1,40 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { CompetitionService } from './competition.service';
 import { CreateCompetitionDto } from './dto/create-competition.dto';
 import { UpdateCompetitionDto } from './dto/update-competition.dto';
+import { Competition } from './entities/competition.entity';
 
 @Controller('competition')
 export class CompetitionController {
   constructor(private readonly competitionService: CompetitionService) {}
 
   @Post()
-  create(@Body() createCompetitionDto: CreateCompetitionDto) {
-    return this.competitionService.create(createCompetitionDto);
+  createCompet(@Body() createCompetitionDto: CreateCompetitionDto): Promise<Competition> {
+    return this.competitionService.createCompet(createCompetitionDto);
   }
 
   @Get()
-  findAll() {
-    return this.competitionService.findAll();
+  getAllCompet() : Promise<Competition[]> {
+    return this.competitionService.getAllCompet();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.competitionService.findOne(+id);
+  getCompetbyId(@Param('id') id: number) : Promise<Competition[]> {
+    return this.competitionService.getCompetbyId(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCompetitionDto: UpdateCompetitionDto) {
-    return this.competitionService.update(+id, updateCompetitionDto);
+  @Get(':nom')
+  getCompetbyName(@Param('nom') nom: string) : Promise<Competition[]> {
+    return this.competitionService.getCompetbyName(nom);
+  }
+
+  @Put(':id')
+  updateCompet(@Param('id') id: number, @Body() updateCompetitionDto: UpdateCompetitionDto) {
+    return this.competitionService.updateCompet(id, updateCompetitionDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.competitionService.remove(+id);
+  removeCompet(@Param('id') id: number) {
+    return this.competitionService.removeCompet(id);
   }
 }

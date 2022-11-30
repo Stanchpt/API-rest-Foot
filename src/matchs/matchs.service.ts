@@ -1,26 +1,42 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMatchDto } from './dto/create-match.dto';
 import { UpdateMatchDto } from './dto/update-match.dto';
+import { MatchsRepository } from './matchs.repository';
+import { Matchs } from './entities/matchs.entity';
 
 @Injectable()
 export class MatchsService {
-  create(createMatchDto: CreateMatchDto) {
-    return 'This action adds a new match';
+  constructor(private readonly MatchRepository: MatchsRepository) {}
+
+  createMatch(createMatchDto: CreateMatchDto):Promise<Matchs> {
+    console.log('This action adds a new match');
+    const MatchToCreate = {
+      ...createMatchDto,
+    };
+    return this.MatchRepository.save(MatchToCreate);
   }
 
-  findAll() {
-    return `This action returns all matchs`;
+  getAllMatchs() : Promise<Matchs[]> {
+    console.log(`This action returns all matchs`);
+    return this.MatchRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} match`;
+  getMatchbyId(id: number): Promise<Matchs[]> {
+    console.log(`This action returns a #${id} Match`);
+      return this.MatchRepository.find({
+        where: {
+          id: id,
+        },
+      });
   }
 
-  update(id: number, updateMatchDto: UpdateMatchDto) {
-    return `This action updates a #${id} match`;
+  updateMatch(id: number, updateMatchDto: UpdateMatchDto) {
+    console.log(`This action updates a #${id} Match`);
+    return this.MatchRepository.update(id,updateMatchDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} match`;
+  removeMatch(id: number) {
+    console.log(`This action removes a #${id} Match`);
+    return this.MatchRepository.delete(id);
   }
 }

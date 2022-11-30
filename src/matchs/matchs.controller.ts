@@ -1,34 +1,36 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { MatchsService } from './matchs.service';
 import { CreateMatchDto } from './dto/create-match.dto';
 import { UpdateMatchDto } from './dto/update-match.dto';
+import { Matchs } from './entities/matchs.entity';
+
 
 @Controller('matchs')
 export class MatchsController {
   constructor(private readonly matchsService: MatchsService) {}
 
   @Post()
-  create(@Body() createMatchDto: CreateMatchDto) {
-    return this.matchsService.create(createMatchDto);
+  createMatch(@Body() createMatchDto: CreateMatchDto) : Promise<Matchs> {
+    return this.matchsService.createMatch(createMatchDto);
   }
 
   @Get()
-  findAll() {
-    return this.matchsService.findAll();
+  getAllMatchs(): Promise<Matchs[]> {
+    return this.matchsService.getAllMatchs();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.matchsService.findOne(+id);
+  getMatchbyId(@Param('id') id: number): Promise<Matchs[]> {
+    return this.matchsService.getMatchbyId(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMatchDto: UpdateMatchDto) {
-    return this.matchsService.update(+id, updateMatchDto);
+  @Put(':id')
+  updateMatch(@Param('id') id: number, @Body() updateMatchDto: UpdateMatchDto) {
+    return this.matchsService.updateMatch(id, updateMatchDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.matchsService.remove(+id);
+  removeMatch(@Param('id') id: number) {
+    return this.matchsService.removeMatch(id);
   }
 }
