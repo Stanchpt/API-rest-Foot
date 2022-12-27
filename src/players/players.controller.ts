@@ -23,6 +23,11 @@ export class PlayersController {
     return this.playersService.getPlayerById(PlayerId);
   }
 
+  @Get(':equipe')
+  getPlayerbyTeam(@Param('equipe') PlayerTeam: string,): Promise<Player[]> {
+    return this.playersService.getPlayerByTeam(PlayerTeam);
+  }
+
   @Put(':id')
   updatePlayer(@Param('id') id: string, @Body() updatePlayerDto: UpdatePlayerDto) {
     console.log('Body', updatePlayerDto);

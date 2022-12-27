@@ -15,8 +15,14 @@ export class Matchs {
   competition: string;
 
   @Column()
-  Date: Date;
+  stade_competition: string;
+
+  @Column({ type: 'date' })
+  date: Date;
 
   @Column()
-  Heure: string;
+  heure:number;
+
+  @Column()
+  img_match : string;
 }

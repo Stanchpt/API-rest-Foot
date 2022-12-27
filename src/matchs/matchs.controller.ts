@@ -24,6 +24,11 @@ export class MatchsController {
     return this.matchsService.getMatchbyId(id);
   }
 
+  @Get(':stade_competition')
+  getMatchbystdcomp(@Param('stade_competition') stade_competition: string): Promise<Matchs[]> {
+    return this.matchsService.getMatchbystdComp(stade_competition);
+  }
+
   @Put(':id')
   updateMatch(@Param('id') id: number, @Body() updateMatchDto: UpdateMatchDto) {
     return this.matchsService.updateMatch(id, updateMatchDto);

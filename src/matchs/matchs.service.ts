@@ -29,6 +29,15 @@ export class MatchsService {
         },
       });
   }
+  
+  getMatchbystdComp(stade_competition : string): Promise<Matchs[]> {
+    console.log(`This action returns the matchs of #${stade_competition}`);
+      return this.MatchRepository.find({
+        where: {
+          stade_competition : stade_competition,
+        },
+      });
+  }
 
   updateMatch(id: number, updateMatchDto: UpdateMatchDto) {
     console.log(`This action updates a #${id} Match`);

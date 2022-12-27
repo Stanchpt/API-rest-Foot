@@ -22,10 +22,19 @@ export class PlayersService {
   }
 
   getPlayerById(PlayerId: number ): Promise<Player[]> {
-    console.log(`This action returns a #${PlayerId} competition`);
+    console.log('This action returns #',PlayerId);
     return this.PlayersRepository.find({
       where: {
         id: PlayerId,
+      },
+    });
+  }
+
+  getPlayerByTeam(PlayerTeam: string ): Promise<Player[]> {
+    console.log(`This action returns the #${PlayerTeam} Players`);
+    return this.PlayersRepository.find({
+      where: {
+        equipe: PlayerTeam,
       },
     });
   }

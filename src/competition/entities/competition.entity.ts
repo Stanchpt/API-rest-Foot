@@ -16,4 +16,10 @@ export class Competition {
 
   @Column()
   region : string;
+
+  @Column()
+  url_info : string; 
+
+  @Column()
+  url_image :string;
 }

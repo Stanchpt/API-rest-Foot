@@ -12,4 +12,10 @@ export class CreateCompetitionDto {
 
   @IsString()
   region: string;
+
+  @IsString()
+  url_info : string; 
+
+  @IsString()
+  url_image: string;
 }

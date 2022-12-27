@@ -14,6 +14,6 @@ export class CreateMatchDto {
     Date: Date;
 
     @IsString()
-    Heure : string;
+    img_match : string;
 }
 
