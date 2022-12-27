@@ -19,4 +19,7 @@ export class Team {
 
   @Column({length : 4})
   id_fifa: string; //Ex : France = FRA
+
+  @Column()
+  logo_team:string;
 }

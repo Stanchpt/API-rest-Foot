@@ -15,4 +15,7 @@ export class CreateTeamDto {
 
     @IsString()
     id_fifa : string;
+
+    @IsString()
+    logo_team : string;
 }
