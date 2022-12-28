@@ -1,15 +1,12 @@
 import { IsNumber, IsString } from "class-validator";
 
-export class CreateTeamDto {
+export class CreateEquipeNationaleDto {
     @IsString()
     nom: string;
 
     @IsString()
     surnom: string;
-  
-    @IsString()
-    Pays: string;
-  
+    
     @IsString()
     Continent: string;
 

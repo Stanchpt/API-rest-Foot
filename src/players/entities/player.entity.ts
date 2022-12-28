@@ -14,6 +14,9 @@ export class Player {
   @Column()
   age: number;
 
-  @Column()
-  equipe: string; //Nom du club ou de l'equipe nationale Ex = Paris St-Germain ou Equipe de France
+  @Column({ nullable: true })
+  club: string; //Nom du club ou de l'equipe nationale Ex = Paris St-Germain
+
+  @Column({ nullable: true })
+  equipe_nationale: string; //Nom du club ou de l'equipe nationale Ex =Equipe de France
 }

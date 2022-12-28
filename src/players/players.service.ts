@@ -34,7 +34,7 @@ export class PlayersService {
     console.log(`This action returns the #${PlayerTeam} Players`);
     return this.PlayersRepository.find({
       where: {
-        equipe: PlayerTeam,
+        club: PlayerTeam,
       },
     });
   }

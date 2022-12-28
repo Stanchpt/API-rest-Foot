@@ -15,6 +15,9 @@ export class Competition {
   nb_equipe: number;
 
   @Column()
+  type: string;
+
+  @Column()
   region : string;
 
   @Column()

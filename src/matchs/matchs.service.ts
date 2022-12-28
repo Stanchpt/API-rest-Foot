@@ -30,11 +30,11 @@ export class MatchsService {
       });
   }
   
-  getMatchbystdComp(stade_competition : string): Promise<Matchs[]> {
-    console.log(`This action returns the matchs of #${stade_competition}`);
+  getMatchbyComp(competition : string): Promise<Matchs[]> {
+    console.log(`This action returns the matchs of #${competition}`);
       return this.MatchRepository.find({
         where: {
-          stade_competition : stade_competition,
+          competition : competition,
         },
       });
   }

@@ -1,12 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Team {
+export class Equipe_Nationale {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  nom: string; //Nom du club ou de l'equipe nationale Ex = Paris St-Germain ou Equipe de France 
+  nom: string; //Nom de l'equipe nationale Ex = Equipe de France 
 
   @Column()
   Surnom: string; //Ex : France = Les BLEUS
@@ -21,5 +21,5 @@ export class Team {
   id_fifa: string; //Ex : France = FRA
 
   @Column()
-  logo_team:string;
+  logo_team: string;
 }

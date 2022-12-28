@@ -10,5 +10,8 @@ export class CreatePlayerDto {
     age: number;
   
     @IsString()
-    equipe: string;
+    club: string;
+
+    @IsString()
+    equipe_nationale: string;
 }

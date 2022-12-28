@@ -1,4 +1,4 @@
-import { isDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class CreateCompetitionDto {
   @IsString()
@@ -10,6 +10,9 @@ export class CreateCompetitionDto {
   @IsNumber()
   nb_equipe: number;
 
+  @IsString()
+  type: string;
+  
   @IsString()
   region: string;
 
