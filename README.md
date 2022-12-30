@@ -25,3 +25,45 @@
     Cliquez-ici pour l'installer :
     (https://github.com/Stanchpt/Appli-React-Foot)
 
+# Les routes disponibles sur cette API
+
+### `http://localhost:3000`  
+    
+    ### 'Equipe_nationale'
+        /Equipe_nationale, POST
+        /Equipe_nationale, GET
+        /Equipe_nationale/:id, GET
+        /Equipe_nationale/:id, PUT
+        /Equipe_nationale/:id, DELETE
+
+    ### 'Club'
+        /Club, POST
+        /Club, GET
+        /Club/:id, GET
+        /Club/:id, PUT
+        /Club/:id, DELETE
+
+    ### 'Players'
+        /players, POST
+        /players, GET
+        /players/:id, GET
+        /players/:equipe, GET
+        /players/:id, PUT
+        /players/:id, DELETE
+    
+    ### 'Competition'
+        /competition, POST
+        /competition, GET
+        /competition/:id, GET
+        /competition/:nom, GET
+        /competition/:id, PUT
+        /competition/:id, DELETE
+
+    ### 'Matchs'
+        /matchs, POST
+        /matchs, GET
+        /matchs/:id, GET
+        /matchs/:competition, GET
+        /matchs/:id, PUT
+        /matchs/:id, DELETE
+    
